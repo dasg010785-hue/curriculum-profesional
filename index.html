@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Diego Andres Sanchez Gantiva - Personal Brand</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#d2e4fb",
+                        "on-secondary-container": "#556679",
+                        "secondary-fixed-dim": "#b7c8de",
+                        "surface-container-highest": "#e1e3e4",
+                        "inverse-surface": "#2e3132",
+                        "on-tertiary-container": "#fdfcff",
+                        "primary-container": "#d83900",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-container": "#d2e4fb",
+                        "primary": "#ff4500",
+                        "on-background": "#191c1d",
+                        "on-surface": "#191c1d",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#b12d00",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#38485a",
+                        "on-secondary-fixed": "#0b1d2d",
+                        "outline": "#926f66",
+                        "tertiary-container": "#667686",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary-fixed": "#d4e4f6",
+                        "surface-dim": "#d9dadb",
+                        "tertiary-fixed-dim": "#b8c8da",
+                        "primary-fixed": "#ffdbd1",
+                        "on-surface-variant": "#5d4038",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "secondary": "#4f6073",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-fixed-variant": "#872000",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#0d1d2a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#edeeef",
+                        "outline-variant": "#e7bdb2",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-container": "#fffbff",
+                        "background": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#394857",
+                        "on-primary-fixed": "#3b0900",
+                        "inverse-primary": "#ffb5a0",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary": "#4e5e6d"
+                    },
+
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "unit": "8px",
+                        "section-gap": "120px",
+                        "gutter": "24px"
+                    },
+
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+
+                    animation: {
+                        "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+                        "float": "float 6s ease-in-out infinite"
+                    },
+
+                    keyframes: {
+                        fadeInUp: {
+                            "0%": {
+                                opacity: "0",
+                                transform: "translateY(30px)"
+                            },
+                            "100%": {
+                                opacity: "1",
+                                transform: "translateY(0)"
+                            }
+                        },
+
+                        float: {
+                            "0%, 100%": {
+                                transform: "translateY(0)"
+                            },
+                            "50%": {
+                                transform: "translateY(-15px)"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .clip-polygon {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .dark .glass-card {
+            background: rgba(30, 30, 30, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bg-pattern {
+            background-image: radial-gradient(#e1e3e4 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            transition: all 0.75s;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-hover:hover::before {
+            left: 125%;
+        }
+
+        .icon-glow-hover:hover .material-symbols-outlined {
+            text-shadow: 0 0 12px rgba(255, 69, 0, 0.6);
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-line {
+            height: 0;
+            transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-line.active {
+            height: 100%;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal,
+            .reveal.active {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            .animate-fade-in-up,
+            .animate-float {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            .card-hover:hover {
+                transform: none;
+            }
+
+            .card-hover::before {
+                display: none;
+            }
+
+            .btn-glow:hover {
+                transform: none;
+            }
+
+            .timeline-line {
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container relative">
+
+    <!-- WebGL Background -->
+    <div class="fixed inset-0 w-full h-full -z-10 pointer-events-none opacity-40">
+
+        <canvas id="shader-canvas-ANIMATION_8"
+            style="display:block;width:100%;height:100%"
+            width="1280"
+            height="6391">
+        </canvas>
+
+        <script>
+            (function () {
+
+                const canvas = document.getElementById('shader-canvas-ANIMATION_8');
+
+                function syncSize() {
+                    const w = canvas.clientWidth || 1280;
+                    const h = canvas.clientHeight || 720;
+
+                    if (canvas.width !== w || canvas.height !== h) {
+                        canvas.width = w;
+                        canvas.height = h;
+                    }
+                }
+
+                if (typeof ResizeObserver !== 'undefined') {
+                    new ResizeObserver(syncSize).observe(canvas);
+                }
+
+                syncSize();
+
+                const gl =
+                    canvas.getContext('webgl') ||
+                    canvas.getContext('experimental-webgl');
+
+                if (!gl) return;
+
+                const vs = `
+                    attribute vec2 a_position;
+
+                    varying vec2 v_texCoord;
+
+                    void main() {
+                        v_texCoord = a_position * 0.5 + 0.5;
+                        gl_Position = vec4(a_position, 0.0, 1.0);
+                    }
+                `;
+
+                const fs = `
+                    precision highp float;
+
+                    uniform float u_time;
+                    uniform vec2 u_resolution;
+                    uniform vec2 u_mouse;
+
+                    varying vec2 v_texCoord;
+
+                    void main() {
+
+                        vec2 uv = v_texCoord;
+
+                        vec2 mouse = u_mouse / u_resolution;
+
+                        float time = u_time * 0.15;
+
+                        float n1 =
+                            sin(uv.x * 10.0 + time) *
+                            cos(uv.y * 8.0 - time * 0.5);
+
+                        float n2 =
+                            sin(uv.y * 15.0 + time * 1.2) *
+                            cos(uv.x * 12.0 + time * 0.8);
+
+                        float noise = (n1 + n2) * 0.5;
+
+                        vec3 baseColor = vec3(0.95, 0.96, 0.97);
+
+                        vec3 accentColor = vec3(1.0, 0.27, 0.0);
+
+                        float dist = distance(uv, mouse);
+
+                        float light =
+                            smoothstep(0.4, 0.0, dist) * 0.1;
+
+                        vec3 color =
+                            baseColor +
+                            (noise * 0.02);
+
+                        color +=
+                            accentColor *
+                            (max(0.0, noise) * 0.05);
+
+                        color +=
+                            accentColor *
+                            light;
+
+                        gl_FragColor =
+                            vec4(color, 1.0);
+                    }
+                `;
+
+                function cs(type, src) {
+
+                    const s = gl.createShader(type);
+
+                    gl.shaderSource(s, src);
+
+                    gl.compileShader(s);
+
+                    return s;
+                }
+
+                const prog = gl.createProgram();
+
+                gl.attachShader(
+                    prog,
+                    cs(gl.VERTEX_SHADER, vs)
+                );
+
+                gl.attachShader(
+                    prog,
+                    cs(gl.FRAGMENT_SHADER, fs)
+                );
+
+                gl.linkProgram(prog);
+
+                gl.useProgram(prog);
+
+                const buf = gl.createBuffer();
+
+                gl.bindBuffer(
+                    gl.ARRAY_BUFFER,
+                    buf
+                );
+
+                gl.bufferData(
+                    gl.ARRAY_BUFFER,
+                    new Float32Array([
+                        -1, -1,
+                        1, -1,
+                        -1, 1,
+                        1, 1
+                    ]),
+                    gl.STATIC_DRAW
+                );
+
+                const pos =
+                    gl.getAttribLocation(
+                        prog,
+                        'a_position'
+                    );
+
+                gl.enableVertexAttribArray(pos);
+
+                gl.vertexAttribPointer(
+                    pos,
+                    2,
+                    gl.FLOAT,
+                    false,
+                    0,
+                    0
+                );
+
+                const uTime =
+                    gl.getUniformLocation(
+                        prog,
+                        'u_time'
+                    );
+
+                const uRes =
+                    gl.getUniformLocation(
+                        prog,
+                        'u_resolution'
+                    );
+
+                const uMouse =
+                    gl.getUniformLocation(
+                        prog,
+                        'u_mouse'
+                    );
+
+                let mouse = {
+                    x: canvas.width / 2,
+                    y: canvas.height / 2
+                };
+
+                window.addEventListener(
+                    'mousemove',
+                    (event) => {
+
+                        const rect =
+                            canvas.getBoundingClientRect();
+
+                        if (rect.width && rect.height) {
+
+                            const nx =
+                                (event.clientX - rect.left) /
+                                rect.width;
+
+                            const ny =
+                                1.0 -
+                                (event.clientY - rect.top) /
+                                rect.height;
+
+                            mouse.x =
+                                nx * canvas.width;
+
+                            mouse.y =
+                                ny * canvas.height;
+                        }
+                    }
+                );
+
+                function render(t) {
+
+                    if (
+                        typeof ResizeObserver ===
+                        'undefined'
+                    ) {
+                        syncSize();
+                    }
+
+                    gl.viewport(
+                        0,
+                        0,
+                        canvas.width,
+                        canvas.height
+                    );
+
+                    if (uTime) {
+                        gl.uniform1f(
+                            uTime,
+                            t * 0.001
+                        );
+                    }
+
+                    if (uRes) {
+                        gl.uniform2f(
+                            uRes,
+                            canvas.width,
+                            canvas.height
+                        );
+                    }
+
+                    if (uMouse) {
+                        gl.uniform2f(
+                            uMouse,
+                            mouse.x,
+                            mouse.y
+                        );
+                    }
+
+                    gl.drawArrays(
+                        gl.TRIANGLE_STRIP,
+                        0,
+                        4
+                    );
+
+                    requestAnimationFrame(render);
+                }
+
+                if (
+                    !window.matchMedia(
+                        '(prefers-reduced-motion: reduce)'
+                    ).matches
+                ) {
+                    render(0);
+                }
+
+            })();
+        </script>
+    </div>
+
+    <!-- Content Container -->
+    <div class="relative z-10">
+
+        <!-- Top Navigation -->
+        <nav
+            class="fixed top-0 w-full flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 z-50 transition-all duration-300 ease-in-out">
+
+            <a
+                class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface-variant tracking-tight hover:text-primary transition-colors"
+                href="#profile">
+
+                Diego Andres Sanchez Gantiva
+
+            </a>
+
+            <div class="hidden md:flex gap-gutter items-center">
+
+                <a
+                    class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary py-2 hover:bg-primary-container/10 transition-colors"
+                    href="#profile">
+
+                    Profile
+
+                </a>
+
+                <a
+                    class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors py-2 hover:bg-primary-container/10"
+                    href="#experience">
+
+                    Experience
+
+                </a>
+
+                <a
+                    class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors py-2 hover:bg-primary-container/10"
+                    href="#education">
+
+                    Education
+
+                </a>
+
+                <a
+                    class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors py-2 hover:bg-primary-container/10"
+                    href="#contact">
+
+                    Contact
+
+                </a>
+
+                <!-- DOWNLOAD CV -->
+                <a
+                    class="ml-4 px-6 py-2 bg-primary text-on-primary font-headline-md text-sm uppercase tracking-wider rounded shadow hover:bg-primary-container transition-all btn-glow flex items-center gap-2"
+                    href="assets/downloads/Curriculum_v3.pdf"
+                    download="Curriculum_v3.pdf">
+
+                    <span class="material-symbols-outlined text-[18px]">
+                        download
+                    </span>
+
+                    Download CV
+
+                </a>
+
+            </div>
+        </nav>
+
+
+        <!-- Hero Section -->
+        <header
+            class="relative pt-32 pb-section-gap overflow-hidden bg-surface-container-low/60 clip-polygon"
+            id="profile">
+
+            <div
+                class="absolute inset-0 bg-pattern opacity-50 z-0 pointer-events-none">
+            </div>
+
+            <div
+                class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+
+                <div
+                    class="md:col-span-7 flex flex-col gap-6 md:pr-12">
+
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full w-fit reveal active">
+
+                        <span class="material-symbols-outlined text-[16px]">
+                            verified
+                        </span>
+
+                        <span
+                            class="font-label-sm text-label-sm uppercase tracking-widest">
+
+                            Environmental &amp; HSE Leadership
+
+                        </span>
+
+                    </div>
+
+
+                    <h1
+                        class="font-display-lg text-display-lg text-on-surface leading-tight reveal active"
+                        style="transition-delay: 100ms;">
+
+                        DIEGO ANDRES
+                        <br>
+
+                        <span class="text-primary">
+                            SANCHEZ GANTIVA
+                        </span>
+
+                    </h1>
+
+
+                    <div
+                        class="flex flex-col gap-3 mt-4 border-l-4 border-primary pl-6 py-2 reveal active"
+                        style="transition-delay: 200ms;">
+
+                        <h2
+                            class="font-headline-md text-headline-md text-secondary uppercase tracking-wide">
+
+                            Administrador Ambiental
+
+                        </h2>
+
+                        <h2
+                            class="font-headline-md text-headline-md text-secondary uppercase tracking-wide">
+
+                            Especialista en Higiene y Salud Ocupacional
+
+                        </h2>
+
+                        <h2
+                            class="font-headline-md text-headline-md text-secondary uppercase tracking-wide">
+
+                            Magíster Sistemas Integrados de Gestión
+
+                        </h2>
+
+                    </div>
+
+
+                    <p
+                        class="font-body-lg text-body-lg text-on-surface-variant mt-6 max-w-2xl reveal active"
+                        style="transition-delay: 300ms;">
+
+                        Magíster en Sistemas Integrados de Gestión, Especialista en Higiene y Salud Ocupacional y Administrador Ambiental, con más de 14 años de experiencia liderando estrategias de Seguridad y Salud en el Trabajo, Sistemas Integrados de Gestión y gestión del riesgo en entidades públicas y organizaciones de alcance nacional.
+
+                    </p>
+
+
+                    <div
+                        class="flex gap-4 mt-8 reveal active"
+                        style="transition-delay: 400ms;">
+
+                        <a
+                            class="px-8 py-4 bg-primary text-on-primary font-headline-md text-sm uppercase tracking-wider hover:bg-primary-container transition-all shadow-lg btn-glow"
+                            href="#experience">
+
+                            View Experience
+
+                        </a>
+
+                        <a
+                            class="px-8 py-4 bg-transparent text-secondary font-headline-md text-sm uppercase tracking-wider border-2 border-secondary hover:bg-secondary hover:text-on-secondary transition-all btn-glow"
+                            href="#contact">
+
+                            Contact Me
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE IMAGE -->
+                <div
+                    class="md:col-span-5 relative mt-12 md:mt-0 reveal animate-float active"
+                    style="transition-delay: 500ms;">
+
+                    <div
+                        class="relative w-full aspect-[3/4] rounded-tr-[100px] rounded-bl-[100px] overflow-hidden shadow-2xl z-10 border-8 border-surface glass-card">
+
+                        <img
+                            alt="Diego Andres Sanchez Gantiva Professional Portrait"
+                            class="w-full h-full object-cover mix-blend-normal"
+                            src="assets/images/foto_perfil.jpeg">
+
+                    </div>
+
+                    <div
+                        class="absolute -bottom-8 -left-8 w-48 h-48 bg-primary/20 rotate-45 -z-10 blur-xl">
+                    </div>
+
+                    <div
+                        class="absolute -top-8 -right-8 w-64 h-64 bg-secondary-container/40 rounded-full -z-10 blur-3xl">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- 1. Executive Summary -->
+        <section class="py-section-gap bg-transparent relative z-20">
+
+            <div
+                class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop reveal active">
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-12 gap-gutter glass-card p-12 rounded-[2rem]">
+
+                    <div class="md:col-span-4">
+
+                        <h3
+                            class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6 relative inline-block">
+
+                            Resumen
+                            <br>
+
+                            <span class="text-primary">
+                                Ejecutivo
+                            </span>
+
+                            <div
+                                class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary">
+                            </div>
+
+                        </h3>
+
+                    </div>
+
+
+                    <div
+                        class="md:col-span-8 space-y-6 text-on-surface-variant font-body-lg text-body-lg">
+
+                        <p>
+
+                            Líder estratégico, enfocado a la transformación de la cultura organizacional a través de la integración de Sistemas de Gestión, Transformación Digital y Analítica de Datos. Mi enfoque se centra en el diseño de modelos de intervención organizacional de alto impacto, el gobierno corporativo en SST y la gestión estratégica de riesgos.
+
+                        </p>
+
+                        <p>
+
+                            Especialista en Lean Six Sigma White Belt, experto en convertir datos complejos en inteligencia de negocios mediante dashboards en Power BI para la toma de decisiones basada en evidencia. Mi experiencia integra liderazgo técnico y visión estratégica para generar valor sostenible en la alta dirección, liderando la transición hacia una prevención inteligente y tecnificada.
+
+                            <br>
+                            <br>
+
+                            He dirigido proyectos de implementación, fortalecimiento y mejora continua del SG-SST, coordinando equipos interdisciplinarios y articulando iniciativas de prevención basadas en análisis de datos, cumplimiento normativo y mejora de procesos. Mi experiencia integra liderazgo técnico, gestión de proyectos, auditoría de sistemas de gestión y transformación organizacional, con énfasis en la toma de decisiones sustentadas en evidencia y la generación de valor para la alta dirección.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 2. Strategic Competencies -->
+        <section
+            class="py-section-gap bg-inverse-surface/90 backdrop-blur-lg text-inverse-on-surface relative z-30">
+
+            <div
+                class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+
+                <div
+                    class="mb-16 text-center reveal active">
+
+                    <h3
+                        class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-tertiary mb-4">
+
+                        Competencias
+                        <span class="text-primary">
+                            Estratégicas
+                        </span>
+
+                    </h3>
+
+                    <p
+                        class="text-body-lg text-on-tertiary/80 max-w-2xl mx-auto">
+
+                        Liderazgo técnico y visión estratégica para la transformación organizacional y la excelencia operativa.
+
+                    </p>
+
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+                    <!-- Category 1 -->
+                    <div
+                        class="bg-surface-container-highest/5 p-8 rounded-xl border border-primary/20 flex flex-col gap-6 card-hover reveal glass-card active"
+                        style="transition-delay: 100ms;">
+
+                        <div class="flex items-center gap-4">
+
+                            <div
+                                class="w-12 h-12 bg-primary/20 rounded flex items-center justify-center">
+
+                                <span
+                                    class="material-symbols-outlined text-primary">
+
+                                    strategy
+
+                                </span>
+
+                            </div>
+
+                            <h4
+                                class="font-headline-md text-headline-md text-on-tertiary">
+
+                                Liderazgo Estratégico &amp; Transformación
+
+                            </h4>
+
+                        </div>
+
+
+                        <ul class="space-y-4">
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Gestión de proyectos
+
+                            </li>
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Lean Six Sigma White Belt
+
+                            </li>
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Gestión del cambio
+
+                            </li>
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Gobierno corporativo en SST
+
+                            </li>
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Diseño de modelos nacionales
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- Category 2 -->
+                    <div
+                        class="bg-surface-container-highest/5 p-8 rounded-xl border border-primary/20 flex flex-col gap-6 card-hover reveal glass-card active"
+                        style="transition-delay: 200ms;">
+
+                        <div class="flex items-center gap-4">
+
+                            <div
+                                class="w-12 h-12 bg-primary/20 rounded flex items-center justify-center">
+
+                                <span
+                                    class="material-symbols-outlined text-primary">
+
+                                    monitoring
+
+                                </span>
+
+                            </div>
+
+                            <h4
+                                class="font-headline-md text-headline-md text-on-tertiary">
+
+                                Tecnología &amp; Analítica
+
+                            </h4>
+
+                        </div>
+
+
+                        <ul class="space-y-4">
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Power BI &amp; Dashboards
+
+                            </li>
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Inteligencia de datos
+
+                            </li>
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                IA aplicada a SST
+
+                            </li>
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Transformación digital
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- Category 3 -->
+                    <div
+                        class="bg-surface-container-highest/5 p-8 rounded-xl border border-primary/20 flex flex-col gap-6 card-hover reveal glass-card active"
+                        style="transition-delay: 300ms;">
+
+                        <div class="flex items-center gap-4">
+
+                            <div
+                                class="w-12 h-12 bg-primary/20 rounded flex items-center justify-center">
+
+                                <span
+                                    class="material-symbols-outlined text-primary">
+
+                                    verified_user
+
+                                </span>
+
+                            </div>
+
+                            <h4
+                                class="font-headline-md text-headline-md text-on-tertiary">
+
+                                Excelencia Operacional
+
+                            </h4>
+
+                        </div>
+
+
+                        <ul class="space-y-4">
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Dirección de auditorías SGSST
+
+                            </li>
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Conocimiento legal normativo
+
+                            </li>
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Gestión de riesgos
+
+                            </li>
+
+                            <li
+                                class="flex items-center gap-3 text-body-md text-on-tertiary/90">
+
+                                <span
+                                    class="material-symbols-outlined text-primary text-sm">
+
+                                    check_circle
+
+                                </span>
+
+                                Cobertura nacional
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Soft Skills -->
+                <div
+                    class="mt-16 p-8 bg-surface rounded-xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 reveal card-hover active"
+                    style="transition-delay: 400ms;">
+
+                    <div class="flex flex-col gap-2">
+
+                        <h4
+                            class="font-headline-md text-headline-md text-on-surface">
+
+                            Soft Skills &amp; Liderazgo
+
+                        </h4>
+
+                        <p
+                            class="text-body-md text-on-surface-variant">
+
+                            Habilidades interpersonales que potencian el impacto organizacional.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="flex flex-wrap gap-3">
+
+                        <span
+                            class="px-4 py-2 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded uppercase tracking-wide">
+
+                            Habilidades comunicacionales
+
+                        </span>
+
+                        <span
+                            class="px-4 py-2 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded uppercase tracking-wide">
+
+                            Trabajo en equipo
+
+                        </span>
+
+                        <span
+                            class="px-4 py-2 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded uppercase tracking-wide">
+
+                            Orientación a resultados
+
+                        </span>
+
+                        <span
+                            class="px-4 py-2 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded uppercase tracking-wide">
+
+                            Liderazgo
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 3. Professional Achievements -->
+        <section class="py-section-gap bg-transparent relative z-20">
+
+            <div
+                class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop reveal active">
+
+                <div class="mb-16">
+
+                    <h3
+                        class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-wide">
+
+                        Logros
+                        <span class="text-primary">
+                            Profesionales
+                        </span>
+
+                    </h3>
+
+                    <p
+                        class="font-body-md text-body-md text-on-surface-variant mt-2">
+
+                        Resultados de alto impacto y transformación organizacional.
+
+                    </p>
+
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+
+                    <div
+                        class="glass-card p-8 rounded-xl card-hover reveal active"
+                        style="transition-delay: 100ms;">
+
+                        <h4
+                            class="font-headline-md text-headline-md text-primary mb-4">
+
+                            Transformación Digital en SST
+
+                        </h4>
+
+                        <p
+                            class="font-body-md text-body-md text-on-surface-variant">
+
+                            Implementación exitosa de dashboards en Power BI y modelos de inteligencia de datos para optimizar la toma de decisiones basada en evidencia en organizaciones de alcance nacional.
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="glass-card p-8 rounded-xl card-hover reveal active"
+                        style="transition-delay: 200ms;">
+
+                        <h4
+                            class="font-headline-md text-headline-md text-primary mb-4">
+
+                            Liderazgo de Proyectos Nacionales
+
+                        </h4>
+
+                        <p
+                            class="font-body-md text-body-md text-on-surface-variant">
+
+                            Diseño y ejecución de modelos de intervención en SST con cobertura nacional, impactando positivamente en la reducción de la accidentalidad y el cumplimiento normativo.
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="glass-card p-8 rounded-xl card-hover reveal active"
+                        style="transition-delay: 300ms;">
+
+                        <h4
+                            class="font-headline-md text-headline-md text-primary mb-4">
+
+                            Gobierno Corporativo y Cultura
+
+                        </h4>
+
+                        <p
+                            class="font-body-md text-body-md text-on-surface-variant">
+
+                            Fortalecimiento de la cultura de prevención y seguridad mediante la implementación de estrategias de gestión del cambio y el involucramiento de la alta dirección.
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="glass-card p-8 rounded-xl card-hover reveal active"
+                        style="transition-delay: 400ms;">
+
+                        <h4
+                            class="font-headline-md text-headline-md text-primary mb-4">
+
+                            Gestión Estratégica de Riesgos
+
+                        </h4>
+
+                        <p
+                            class="font-body-md text-body-md text-on-surface-variant">
+
+                            Aplicación de metodologías Lean Six Sigma para la mejora continua de los procesos de SST y la mitigación efectiva de riesgos laborales en entornos complejos.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 4. Professional Experience -->
+        <section
+            class="py-section-gap bg-surface-container-low/40 backdrop-blur-sm relative"
+            id="experience">
+
+            <div
+                class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+
+                <div class="mb-16 reveal active">
+
+                    <h3
+                        class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-wide">
+
+                        Experiencia
+                        <span class="text-primary">
+                            Profesional
+                        </span>
+
+                    </h3>
+
+                    <p
+                        class="font-body-md text-body-md text-on-surface-variant mt-2">
+
+                        A decade of leadership in HSE and Integrated Management Systems.
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-8 relative timeline-container reveal active">
+
+
+                    <!-- Timeline Line -->
+                    <div
+                        class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-primary/30 transform -translate-x-1/2 overflow-hidden">
+
+                        <div
+                            class="timeline-line bg-primary w-full active">
+                        </div>
+
+                    </div>
+
+
+                    <!-- Experience 1 -->
+                    <div
+                        class="md:col-start-1 md:pr-12 group reveal active"
+                        style="transition-delay: 100ms;">
+
+                        <div
+                            class="glass-card p-8 shadow-sm border-l-4 border-l-transparent hover:border-l-primary card-hover rounded-xl relative">
+
+                            <div
+                                class="hidden md:block absolute top-8 -right-[3.3rem] w-4 h-4 bg-primary rounded-full border-4 border-surface z-10 shadow-[0_0_10px_rgba(255,69,0,0.5)]">
+                            </div>
+
+                            <div class="flex justify-between items-start mb-4">
+
+                                <span
+                                    class="font-label-sm text-label-sm text-primary tracking-widest uppercase">
+
+                                    Enero de 2024 - Actual
+
+                                </span>
+
+                                <span
+                                    class="material-symbols-outlined text-outline">
+
+                                    work
+
+                                </span>
+
+                            </div>
+
+
+                            <h4
+                                class="font-headline-md text-headline-md text-on-surface mb-1">
+
+                                Coordinador Técnico Nacional
+
+                            </h4>
+
+                            <h5
+                                class="font-body-md text-body-md text-secondary font-semibold mb-3">
+
+                                SYSO, SEGURIDAD SALUD EN EL TRABAJO SAS
+
+                            </h5>
+
+
+                            <div class="mt-4 space-y-2">
+
+                                <p
+                                    class="font-body-md text-body-md text-on-surface-variant font-semibold">
+
+                                    Proyecto Positiva ARL - Rama Judicial.
+
+                                </p>
+
+                                <ul
+                                    class="list-disc list-inside font-body-md text-body-md text-on-surface-variant space-y-1">
+
+                                    <li>
+                                        Liderazgo de modelos nacionales de SST con cobertura nacional
+                                    </li>
+
+                                    <li>
+                                        Gestión de indicadores estratégicos e inteligencia de datos mediante Power BI y Dashboards
+                                    </li>
+
+                                    <li>
+                                        Implementación de IA aplicada a SST para la optimización de procesos
+                                    </li>
+
+                                    <li>
+                                        Gestión del cambio organizacional
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hidden md:block md:col-start-2"></div>
+
+                    <div class="hidden md:block md:col-start-1"></div>
+
+
+                    <!-- Experience 2 -->
+                    <div
+                        class="md:col-start-2 md:pl-12 group reveal active"
+                        style="transition-delay: 300ms;">
+
+                        <div
+                            class="glass-card p-8 shadow-sm border-l-4 border-l-transparent hover:border-l-primary relative card-hover rounded-xl">
+
+                            <div
+                                class="hidden md:block absolute top-8 -left-[3.3rem] w-4 h-4 bg-primary rounded-full border-4 border-surface z-10 shadow-[0_0_10px_rgba(255,69,0,0.5)]">
+                            </div>
+
+                            <div class="flex justify-between items-start mb-4">
+
+                                <span
+                                    class="font-label-sm text-label-sm text-primary tracking-widest uppercase">
+
+                                    Enero de 2023 - Diciembre 2023
+
+                                </span>
+
+                                <span
+                                    class="material-symbols-outlined text-outline">
+
+                                    corporate_fare
+
+                                </span>
+
+                            </div>
+
+
+                            <h4
+                                class="font-headline-md text-headline-md text-on-surface mb-1">
+
+                                Coordinador SST y Bienestar
+
+                            </h4>
+
+                            <h5
+                                class="font-body-md text-body-md text-secondary font-semibold mb-3">
+
+                                COLFONDOS PENSIONES Y CESANTIAS
+
+                            </h5>
+
+
+                            <ul
+                                class="mt-4 list-disc list-inside font-body-md text-body-md text-on-surface-variant space-y-1">
+
+                                <li>
+                                    Gobierno del SG-SST e impacto organizacional
+                                </li>
+
+                                <li>
+                                    Gestión de proyectos bajo metodología Lean Six Sigma
+                                </li>
+
+                                <li>
+                                    Liderazgo de equipos multidisciplinarios
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hidden md:block md:col-start-2"></div>
+
+
+                    <!-- Experience 3 -->
+                    <div
+                        class="md:col-start-1 md:pr-12 group reveal active"
+                        style="transition-delay: 500ms;">
+
+                        <div
+                            class="glass-card p-8 shadow-sm border-l-4 border-l-transparent hover:border-l-primary card-hover rounded-xl relative">
+
+                            <div
+                                class="hidden md:block absolute top-8 -right-[3.3rem] w-4 h-4 bg-primary rounded-full border-4 border-surface z-10 shadow-[0_0_10px_rgba(255,69,0,0.5)]">
+                            </div>
+
+                            <div class="flex justify-between items-start mb-4">
+
+                                <span
+                                    class="font-label-sm text-label-sm text-primary tracking-widest uppercase">
+
+                                    Enero de 2019 - Diciembre 2022
+
+                                </span>
+
+                                <span
+                                    class="material-symbols-outlined text-outline">
+
+                                    architecture
+
+                                </span>
+
+                            </div>
+
+
+                            <h4
+                                class="font-headline-md text-headline-md text-on-surface mb-1">
+
+                                Líder Nacional Higiene y Seguridad Industrial
+
+                            </h4>
+
+                            <h5
+                                class="font-body-md text-body-md text-secondary font-semibold mb-3">
+
+                                PROYECTOS Y CONSULTORIAS SAS
+
+                            </h5>
+
+
+                            <div class="mt-4 space-y-2">
+
+                                <p
+                                    class="font-body-md text-body-md text-on-surface-variant font-semibold">
+
+                                    Positiva ARL - Rama Judicial.
+
+                                </p>
+
+                                <ul
+                                    class="list-disc list-inside font-body-md text-body-md text-on-surface-variant space-y-1">
+
+                                    <li>
+                                        Innovación en modelos de intervención
+                                    </li>
+
+                                    <li>
+                                        Gestión presupuestal de programas nacionales
+                                    </li>
+
+                                    <li>
+                                        Aseguramiento de la cobertura nacional en servicios técnicos
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="mt-12 text-center reveal active"
+                    style="transition-delay: 600ms;">
+
+                    <button
+                        class="px-6 py-3 border-2 border-secondary text-secondary hover:bg-secondary hover:text-on-secondary font-label-sm text-label-sm uppercase tracking-widest transition-all btn-glow rounded">
+
+                        View Full History
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 5. Education -->
+        <section
+            class="py-section-gap bg-transparent relative z-20"
+            id="education">
+
+            <div
+                class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop reveal active">
+
+                <div class="mb-16">
+
+                    <h3
+                        class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-wide">
+
+                        Formación
+                        <span class="text-primary">
+                            Académica
+                        </span>
+
+                    </h3>
+
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+                    <div
+                        class="glass-card p-8 rounded-xl border-t-4 border-t-primary shadow-sm card-hover reveal active"
+                        style="transition-delay: 100ms;">
+
+                        <h4
+                            class="font-headline-md text-headline-md text-on-surface mb-2">
+
+                            Magíster Sistemas Integrados de Gestión
+
+                        </h4>
+
+                        <p
+                            class="font-body-md text-body-md text-secondary">
+
+                            Universidad - Año
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="glass-card p-8 rounded-xl border-t-4 border-t-primary shadow-sm card-hover reveal active"
+                        style="transition-delay: 200ms;">
+
+                        <h4
+                            class="font-headline-md text-headline-md text-on-surface mb-2">
+
+                            Especialista en Higiene y Salud Ocupacional
+
+                        </h4>
+
+                        <p
+                            class="font-body-md text-body-md text-secondary">
+
+                            Universidad - Año
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="glass-card p-8 rounded-xl border-t-4 border-t-primary shadow-sm card-hover reveal active"
+                        style="transition-delay: 300ms;">
+
+                        <h4
+                            class="font-headline-md text-headline-md text-on-surface mb-2">
+
+                            Administrador Ambiental
+
+                        </h4>
+
+                        <p
+                            class="font-body-md text-body-md text-secondary">
+
+                            Universidad - Año
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 6. Certifications -->
+        <section
+            class="py-section-gap bg-surface-container-low/40 backdrop-blur-sm relative z-20">
+
+            <div
+                class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop reveal active">
+
+                <div class="mb-16">
+
+                    <h3
+                        class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-wide">
+
+                        Certificaciones
+                        <span class="text-primary">
+                            y Entrenamiento
+                        </span>
+
+                    </h3>
+
+                </div>
+
+
+                <div class="flex flex-wrap gap-4">
+
+                    <span
+                        class="glass-card px-6 py-3 text-on-surface font-body-md text-body-md rounded-full shadow-sm card-hover reveal active"
+                        style="transition-delay: 100ms;">
+
+                        Lean Six Sigma White Belt
+
+                    </span>
+
+                    <span
+                        class="glass-card px-6 py-3 text-on-surface font-body-md text-body-md rounded-full shadow-sm card-hover reveal active"
+                        style="transition-delay: 200ms;">
+
+                        Auditor Interno HSEQ
+
+                    </span>
+
+                    <span
+                        class="glass-card px-6 py-3 text-on-surface font-body-md text-body-md rounded-full shadow-sm card-hover reveal active"
+                        style="transition-delay: 300ms;">
+
+                        Gestión de Proyectos PMI
+
+                    </span>
+
+                    <span
+                        class="glass-card px-6 py-3 text-on-surface font-body-md text-body-md rounded-full shadow-sm card-hover reveal active"
+                        style="transition-delay: 400ms;">
+
+                        Gestión del Riesgo ISO 31000
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 7. Technology Tools -->
+        <section
+            class="py-section-gap bg-inverse-surface/90 backdrop-blur-lg text-inverse-on-surface relative z-20">
+
+            <div
+                class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop reveal active">
+
+                <div class="mb-16 text-center">
+
+                    <h3
+                        class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-tertiary uppercase tracking-wide">
+
+                        Herramientas
+                        <span class="text-primary">
+                            Tecnológicas
+                        </span>
+
+                    </h3>
+
+                </div>
+
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+
+                    <div
+                        class="flex flex-col items-center justify-center p-6 bg-surface-container-highest/5 rounded-xl border border-primary/20 card-hover icon-glow-hover reveal glass-card active"
+                        style="transition-delay: 100ms;">
+
+                        <span
+                            class="material-symbols-outlined text-4xl text-primary mb-4 transition-all duration-300">
+
+                            bar_chart
+
+                        </span>
+
+                        <h4
+                            class="font-headline-md text-body-lg text-on-tertiary text-center">
+
+                            Power BI &amp; Dashboards
+
+                        </h4>
+
+                    </div>
+
+
+                    <div
+                        class="flex flex-col items-center justify-center p-6 bg-surface-container-highest/5 rounded-xl border border-primary/20 card-hover icon-glow-hover reveal glass-card active"
+                        style="transition-delay: 200ms;">
+
+                        <span
+                            class="material-symbols-outlined text-4xl text-primary mb-4 transition-all duration-300">
+
+                            smart_toy
+
+                        </span>
+
+                        <h4
+                            class="font-headline-md text-body-lg text-on-tertiary text-center">
+
+                            Inteligencia Artificial
+
+                        </h4>
+
+                    </div>
+
+
+                    <div
+                        class="flex flex-col items-center justify-center p-6 bg-surface-container-highest/5 rounded-xl border border-primary/20 card-hover icon-glow-hover reveal glass-card active"
+                        style="transition-delay: 300ms;">
+
+                        <span
+                            class="material-symbols-outlined text-4xl text-primary mb-4 transition-all duration-300">
+
+                            database
+
+                        </span>
+
+                        <h4
+                            class="font-headline-md text-body-lg text-on-tertiary text-center">
+
+                            Analítica de Datos
+
+                        </h4>
+
+                    </div>
+
+
+                    <div
+                        class="flex flex-col items-center justify-center p-6 bg-surface-container-highest/5 rounded-xl border border-primary/20 card-hover icon-glow-hover reveal glass-card active"
+                        style="transition-delay: 400ms;">
+
+                        <span
+                            class="material-symbols-outlined text-4xl text-primary mb-4 transition-all duration-300">
+
+                            account_tree
+
+                        </span>
+
+                        <h4
+                            class="font-headline-md text-body-lg text-on-tertiary text-center">
+
+                            Gestión de Proyectos
+
+                        </h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer / Contact -->
+        <footer
+            class="w-full py-section-gap px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-unit bg-surface-container-highest/80 dark:bg-inverse-surface/80 backdrop-blur-md border-t-4 border-primary reveal active"
+            id="contact">
+
+            <div
+                class="flex flex-col items-center md:items-start mb-8 md:mb-0">
+
+                <span
+                    class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight mb-2">
+
+                    DIEGO ANDRES SANCHEZ GANTIVA
+
+                </span>
+
+                <span
+                    class="font-body-md text-body-md text-secondary">
+
+                    Environmental Management &amp; HSE Leadership
+
+                </span>
+
+            </div>
+
+
+            <div
+                class="flex flex-col md:flex-row gap-8 items-center">
+
+
+                <a
+                    class="group flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors"
+                    href="mailto:dasg_1985@hotmail.com">
+
+                    <span
+                        class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">
+
+                        mail
+
+                    </span>
+
+                    <span class="font-body-md text-body-md">
+
+                        dasg_1985@hotmail.com
+
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="group flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors"
+                    href="tel:+573138408376">
+
+                    <span
+                        class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">
+
+                        call
+
+                    </span>
+
+                    <span class="font-body-md text-body-md">
+
+                        +57 3138408376
+
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="group flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">
+
+                    <span
+                        class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">
+
+                        location_on
+
+                    </span>
+
+                    <span class="font-body-md text-body-md">
+
+                        Bogotá, Colombia
+
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="group flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors"
+                    href="https://www.linkedin.com/in/diego-andres-sanchez-gantiva-37107b51"
+                    rel="noopener noreferrer"
+                    target="_blank">
+
+                    <span
+                        class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">
+
+                        link
+
+                    </span>
+
+                    <span class="font-body-md text-body-md">
+
+                        LinkedIn
+
+                    </span>
+
+                </a>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- Scroll Reveal Observer -->
+    <script>
+
+        const revealElements =
+            document.querySelectorAll('.reveal');
+
+        const timelineContainer =
+            document.querySelector('.timeline-container');
+
+        const timelineLine =
+            document.querySelector('.timeline-line');
+
+
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+
+        const revealOnScroll =
+            new IntersectionObserver(
+
+                function (
+                    entries,
+                    revealOnScroll
+                ) {
+
+                    entries.forEach(entry => {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        entry.target.classList.add("active");
+
+
+                        if (
+                            entry.target === timelineContainer &&
+                            timelineLine
+                        ) {
+
+                            setTimeout(() => {
+
+                                timelineLine.classList.add('active');
+
+                            }, 300);
+
+                        }
+
+
+                        revealOnScroll.unobserve(entry.target);
+
+                    });
+
+                },
+
+                revealOptions
+
+            );
+
+
+        revealElements.forEach(el => {
+
+            revealOnScroll.observe(el);
+
+        });
+
+
+        if (timelineContainer) {
+
+            revealOnScroll.observe(
+                timelineContainer
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
