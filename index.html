@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth" lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -2148,6 +2148,90 @@
         }
 
     </script>
+<script>
+    // Mobile Navigation
+    const mobileMenuButton =
+        document.getElementById('mobile-menu-button');
+
+    const mobileMenu =
+        document.getElementById('mobile-menu');
+
+    const mobileMenuIcon =
+        document.getElementById('mobile-menu-icon');
+
+    const mobileMenuLinks =
+        document.querySelectorAll('.mobile-menu-link');
+
+
+    if (mobileMenuButton && mobileMenu) {
+
+        mobileMenuButton.addEventListener('click', () => {
+
+            const isOpen =
+                !mobileMenu.classList.contains('hidden');
+
+            if (isOpen) {
+
+                mobileMenu.classList.add('hidden');
+
+                mobileMenuIcon.textContent = 'menu';
+
+                mobileMenuButton.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+
+                mobileMenuButton.setAttribute(
+                    'aria-label',
+                    'Open navigation menu'
+                );
+
+            } else {
+
+                mobileMenu.classList.remove('hidden');
+
+                mobileMenuIcon.textContent = 'close';
+
+                mobileMenuButton.setAttribute(
+                    'aria-expanded',
+                    'true'
+                );
+
+                mobileMenuButton.setAttribute(
+                    'aria-label',
+                    'Close navigation menu'
+                );
+
+            }
+
+        });
+
+
+        // Close menu after selecting a section
+        mobileMenuLinks.forEach(link => {
+
+            link.addEventListener('click', () => {
+
+                mobileMenu.classList.add('hidden');
+
+                mobileMenuIcon.textContent = 'menu';
+
+                mobileMenuButton.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+
+                mobileMenuButton.setAttribute(
+                    'aria-label',
+                    'Open navigation menu'
+                );
+
+            });
+
+        });
+
+    }
+</script>
 
 </body>
 
